@@ -25,7 +25,7 @@ import PlaygroundSupport
 let canvas = Canvas(width: 400, height: 600)
 
 // COLORS
-let offWhite = Color(hue: 81, saturation: 5, brightness: 88, alpha: 100)
+let offWhite = Color(hue: 81, saturation: 5, brightness: 83k, alpha: 100)
 let limeGreen = Color(hue: 106, saturation: 64, brightness: 73, alpha: 100)
 let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 
@@ -65,12 +65,15 @@ for hengcircle in stride(from: 0, through: 400, by: 40){
 }
 
 //draw the white circle
-for circle in stride(from: 40, through: 360, by: 40){
-    canvas.fillColor = offWhite
-    canvas.drawShapesWithFill = true
-    canvas.drawEllipse(at: <#T##Point#>, width: <#T##Int#>, height: <#T##Int#>)
+for circle in 0...8{
+    for whiteCircle in 0...(8-circle){
+        canvas.fillColor = offWhite
+          canvas.drawShapesWithFill = true
+        canvas.drawEllipse(at: Point(x: 40 * circle + 40, y:40 * whiteCircle + 40), width: 35, height: 35)
+      
+    }
 }
-
+/*
 //print the reference lines
 for shuline in 1...7{
     canvas.drawLine(from: Point(x: shuline * 50,y: 0), to: Point(x: shuline * 50,y: 600))
@@ -79,6 +82,8 @@ for shuline in 1...7{
 for hengline in 1...11{
     canvas.drawLine(from: Point(x: 0,y: hengline * 50), to: Point(x: 400,y: hengline * 50))
 }
+ */
+
 /*:
  ## Use Source Control
  
