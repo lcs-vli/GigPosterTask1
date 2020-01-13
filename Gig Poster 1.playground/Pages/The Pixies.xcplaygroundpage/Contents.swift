@@ -28,9 +28,37 @@ let canvas = Canvas(width: 400, height: 600)
 let offWhite = Color(hue: 81, saturation: 5, brightness: 88, alpha: 100)
 let limeGreen = Color(hue: 106, saturation: 64, brightness: 73, alpha: 100)
 
-// Begin your solution here...
+//set the canvas colour
+canvas.fillColor = limeGreen
+canvas.drawRectangle(at: Point(x: 0,y: 0), width: 400, height: 600)
+
+//print title
+canvas.drawText(message: "prixies", at: Point(x:15,y:410), size: 60)
 
 
+//print the lines above the title
+canvas.drawText(message: "saturday", at: Point(x:14,y:550), size: 10)
+canvas.drawText(message: "december 13 1986", at: Point(x:14,y:535), size: 10)
+canvas.drawText(message: "9 pm over 21", at: Point(x:14,y:520), size: 10)
+canvas.drawText(message: "at the rat", at: Point(x:270,y:550), size: 10)
+canvas.drawText(message: "528 commonwealth", at: Point(x:270,y:535), size: 10)
+canvas.drawText(message: "boston, mass.", at: Point(x:270,y:520), size: 10)
+
+//print the white lines beside the title
+canvas.textColor = offWhite
+canvas.drawText(message: "with", at: Point(x:270,y:450), size: 14)
+canvas.drawText(message: "throwing muses", at: Point(x:270,y:435), size: 14)
+canvas.drawText(message: "dig dipper", at: Point(x:270,y:420), size: 14)
+
+
+//print the reference lines
+for shuline in 1...7{
+    canvas.drawLine(from: Point(x: shuline * 50,y: 0), to: Point(x: shuline * 50,y: 600))
+}
+
+for hengline in 1...11{
+    canvas.drawLine(from: Point(x: 0,y: hengline * 50), to: Point(x: 400,y: hengline * 50))
+}
 /*:
  ## Use Source Control
  
