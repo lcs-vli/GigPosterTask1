@@ -27,6 +27,7 @@ let canvas = Canvas(width: 400, height: 600)
 // COLORS
 let offWhite = Color(hue: 81, saturation: 5, brightness: 88, alpha: 100)
 let limeGreen = Color(hue: 106, saturation: 64, brightness: 73, alpha: 100)
+let black = Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 
 //set the canvas colour
 canvas.fillColor = limeGreen
@@ -50,6 +51,25 @@ canvas.drawText(message: "with", at: Point(x:270,y:450), size: 14)
 canvas.drawText(message: "throwing muses", at: Point(x:270,y:435), size: 14)
 canvas.drawText(message: "dig dipper", at: Point(x:270,y:420), size: 14)
 
+//draw the black block
+canvas.fillColor = black
+canvas.drawRectangle(at: Point(x:0, y:0), width: 400, height: 400)
+
+//draw green circles
+canvas.fillColor = limeGreen
+canvas.drawShapesWithBorders = false
+for hengcircle in stride(from: 0, through: 400, by: 40){
+    for shucircle in stride(from: 0, through: 400, by: 40){
+        canvas.drawEllipse(at: Point(x: hengcircle, y: shucircle), width: 35, height: 35)
+    }
+}
+
+//draw the white circle
+for circle in stride(from: 40, through: 360, by: 40){
+    canvas.fillColor = offWhite
+    canvas.drawShapesWithFill = true
+    canvas.drawEllipse(at: <#T##Point#>, width: <#T##Int#>, height: <#T##Int#>)
+}
 
 //print the reference lines
 for shuline in 1...7{
